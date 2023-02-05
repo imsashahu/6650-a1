@@ -21,7 +21,8 @@ public class MyRunnable implements Runnable {
     public void run() {
         ApiClient apiClient = new ApiClient();
         apiClient.setBasePath("http://54.201.38.205:8080/swipe_war");
-        //apiClient.setBasePath("http://localhost:8080/swipe_war_exploded");
+        // apiClient.setBasePath("http://35.87.36.221:8080"); // Bonus: spring boot deployment
+        // apiClient.setBasePath("http://localhost:8080/swipe_war_exploded"); // Local test
         SwipeApi apiInstance = new SwipeApi(apiClient);
         SwipeDetails body = new SwipeDetails();
         RandomGenerator newPostRequest = new RandomGenerator();
