@@ -1,11 +1,7 @@
-import java.io.BufferedWriter;
 import java.sql.Timestamp;
 import java.util.Collections;
-import java.util.concurrent.LinkedBlockingQueue;
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.Random;
 
 public class Client {

@@ -3,11 +3,7 @@ import io.swagger.client.ApiException;
 import io.swagger.client.ApiResponse;
 import io.swagger.client.api.SwipeApi;
 import io.swagger.client.model.SwipeDetails;
-import java.sql.Timestamp;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.LinkedBlockingQueue;
 
 public class MyRunnable implements Runnable {
     int numRequest;
@@ -20,13 +16,14 @@ public class MyRunnable implements Runnable {
 
     public void run() {
         ApiClient apiClient = new ApiClient();
-        apiClient.setBasePath("http://54.201.38.205:8080/swipe_war");
+        apiClient.setBasePath("http://35.87.78.136:8080/swipe_war");
+//        apiClient.setConnectTimeout(500000);
+//        apiClient.setReadTimeout(500000);
         // apiClient.setBasePath("http://35.87.36.221:8080"); // Bonus: spring boot deployment
         // apiClient.setBasePath("http://localhost:8080/swipe_war_exploded"); // Local test
         SwipeApi apiInstance = new SwipeApi(apiClient);
         SwipeDetails body = new SwipeDetails();
         RandomGenerator newPostRequest = new RandomGenerator();
-        StringBuilder sb;
 
         for (int iRequest = 0; iRequest < numRequest; iRequest++) {
             newPostRequest.generate();
